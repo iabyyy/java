@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>the document object</h1>
+    <h2>the querySelector()method</h2>
+    <p class="example">iam a paragraph</p>
+    <p class="example">haaaai</p>
+    <h1 class="example">helllo</h1>
+    <h2 class="example">haaaihello</h2>
+    <p id="ff">welocome</p>
+
+    <script>
+        let a=document.querySelectorAll(".example");
+        for(i=0;i<a.length;i++)
+        {
+            a[i].style.color="red";
+        }
+    </script>
+    
+</body>
+</html>

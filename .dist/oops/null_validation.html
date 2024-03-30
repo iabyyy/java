@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            background-color:gray;
+            width: 500px;
+            margin: auto;
+            margin-top: 200px;
+            padding-left: 50px;
+            padding-top: 50px;
+            padding-bottom: 70px;
+            border: 1px solid black;
+            border-radius:0.5rem;
+        }
+        #name ,#number,#place,#email,#username,#password
+        {
+            width: 440px;
+            height: 25px;
+            border: 1px solid black;
+            border-radius: 0.3rem;
+        }
+        #submit
+        {
+            background-color: blue;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 0.5rem;
+            margin-left: 150px;
+        }
+       
+    </style>
+</head>
+<body>
+   <div class="container">
+    <form action="">
+        <h4 id="h4">Constomer Registration</h4>
+        <input type="text" id="name" onkeyup="clearmsg('sp1')" placeholder="name"><br><span id="sp1"  style="color: red;font-size: 15px;"></span><br>
+        <input type="number" id="number" onkeyup="clearmsg('sp2')" placeholder="number" ><br><span id="sp2" style="color: red;font-size: 15px;"></span><br>
+        <input type="text" id="place" onkeyup="clearmsg('sp3')"placeholder="place"><br><span id="sp3" style="color: red;font-size: 15px;"></span><br>
+        <input type="email" id="email" onkeyup="clearmsg('sp4')"placeholder="email"><br><span id="sp4" style="color: red;font-size: 15px;"></span><br>
+        <input type="text" id="username" onkeyup="clearmsg('sp5')"placeholder="username"><br><span id="sp5" style="color: red;font-size: 15px;"></span><br>
+        <input type="password" id="password" onkeyup="password('sp6')" placeholder="password"><br><span id="sp6" style="color: red;font-size: 15px;"></span><br>
+        <button id="submit" onclick="return valid();return false;" name="submit" type="submit">submit</button>
+       </form>
+   </div>
+    
+
+   <script>
+    function valid()
+    {
+        var name=document.getElementById("name").value;
+        var number=document.getElementById("number").value;
+        var place=document.getElementById("place").value;
+        var email=document.getElementById("email").value;
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        if(name=="")
+        {
+            document.getElementById("sp1").innerHTML="please enter your name";
+            return false;
+        }
+        if(number=="")
+        {
+            document.getElementById("sp2").innerHTML="please enter your number";
+            return false;
+        }
+        if(place=="")
+        {
+            document.getElementById("sp3").innerHTML="please enter your place";
+            return false;
+        }
+        if(email=="")
+        {
+            document.getElementById("sp4").innerHTML="please enter your email";
+            return false;
+        }
+        if(username=="")
+        {
+            document.getElementById("sp5").innerHTML="please enter your username";
+            return false;
+        }
+        if(password=="")
+        {
+            document.getElementById("sp6").innerHTML="please enter your password";
+
+            return false;
+        }
+        return true;
+    }
+
+        function clearmsg(sp)
+        {
+            document.getElementById(sp).innerHTML="";
+        }
+        function password(sp6)
+        {
+            let password  = document.getElementById("password").value;
+            console.log(password);
+            let regex= /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$/;
+
+            if(regex.test(password))
+            {
+                document.getElementById("sp6").style.color="green"
+                document.getElementById("sp6").innerHTML="password is valid"
+            }
+            else
+            {
+                document.getElementById("sp6").style.color="red"
+                document.getElementById("sp6").innerHTML="password is invalid"
+            }
+            return true;
+
+        }
+
+   </script>
+</body>
+</html>

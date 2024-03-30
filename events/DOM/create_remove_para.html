@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section>
+        <button onclick="myfunction()">create element</button>
+        <button onclick="removetext()">remove element</button>
+    </section>
+    <script>
+        function myfunction()
+        {
+            let newpara=document.createElement("p")
+            newpara.textContent="futuralabs :-enable transform accelerate";
+            let sec=document.querySelector("section");
+            sec.appendChild(newpara);
+        }
+        function removetext()
+        {
+            let sec =document.querySelector("section");
+            let newpara=sec.querySelector("p");
+            sec.removeChild(newpara);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<img id="on" src="https://img.freepik.com/premium-photo/turn-tungsten-light-bulb-isolated-white_45716-9.jpg" alt="" style="height: 250px;width: 180px;"><br>
+<button  onclick="bulbon()">ON</button>
+<button  onclick="bulboff()">OFF</button>
+
+
+<script>
+    function bulbon()
+    {
+       var image=document.getElementById("on")
+       image.src="https://img.freepik.com/premium-photo/turn-tungsten-light-bulb-realistic-photo-image_45716-10.jpg "
+       image.style.width="180px"
+       image.style.height="250px"
+    }
+    function bulboff()
+    {
+        var imageoff=document.getElementById("on")
+        imageoff.src="https://img.freepik.com/premium-photo/turn-tungsten-light-bulb-isolated-white_45716-9.jpg"
+        imageoff.style.width="180px"
+        imageoff.style.height="250px"
+    }
+</script>
+    
+    
+</body>
+</html>
